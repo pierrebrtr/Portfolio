@@ -1,0 +1,241 @@
+/*
+** Opacity
+*/
+.opacity(@opacity: 0.5) {
+  -moz-opacity: @opacity;
+  -khtml-opacity: @opacity;
+  -webkit-opacity: @opacity;
+  opacity: @opacity;
+  @opperc: @opacity * 100;
+  -ms-filter: ~"progid:DXImageTransform.Microsoft.Alpha(opacity=@{opperc})";
+  filter: ~"alpha(opacity=@{opperc})";
+}
+
+
+/*
+** Border Radius
+*/
+.border-radius(@radius) {
+    -webkit-border-radius: @radius;
+    -moz-border-radius: @radius;
+    border-radius: @radius;
+}
+
+
+/*
+** CSS3 animation
+*/
+.transition(@value) {
+    -ms-transition: @value;
+    -moz-transition: @value;
+    -o-transition: @value;
+    -webkit-transition: @value;
+}
+
+.perspective(@value) {
+    -o-perspective: @value;
+    -moz-perspective: @value;
+    -ms-perspective: @value;
+    -webkit-perspective: @value;
+}
+
+.transform(@value) {
+    -o-transform: @value;
+    -ms-transform: @value;
+    -moz-transform: @value;
+    -webkit-transform: @value;
+}
+
+.origin(@value) {
+    -o-transform-origin: @value;
+    -ms-transform-origin: @value;
+    -moz-transform-origin: @value;
+    -webkit-transform-origin: @value;
+}
+
+.rotate(@degrees) {
+    -o-transform: rotate(@degrees);
+    -ms-transform: rotate(@degrees);
+    -moz-transform: rotate(@degrees);
+    -webkit-transform: rotate(@degrees);
+}
+
+.rotateX(@degrees) {
+    -o-transform: rotateX(@degrees);
+    -ms-transform: rotateX(@degrees);
+    -moz-transform: rotateX(@degrees);
+    -webkit-transform: rotateX(@degrees);
+}
+
+.rotateY(@degrees) {
+    -o-transform: rotateY(@degrees);
+    -ms-transform: rotateY(@degrees);
+    -moz-transform: rotateY(@degrees);
+    -webkit-transform: rotateY(@degrees);
+}
+
+.rotateZ(@degrees) {
+    -o-transform: rotateZ(@degrees);
+    -ms-transform: rotateZ(@degrees);
+    -moz-transform: rotateZ(@degrees);
+    -webkit-transform: rotateZ(@degrees);
+}
+
+.rotate3d(@value) {
+    -o-transform: rotate3d(@value);
+    -ms-transform: rotate3d(@value);
+    -moz-transform: rotate3d(@value);
+    -webkit-transform: rotate3d(@value);
+}
+
+.box-shadow(@arguments) {
+    box-shadow: @arguments;
+    -moz-box-shadow: @arguments;
+    -webkit-box-shadow: @arguments;
+    -o-box-shadow: @arguments;
+}
+
+.text-shadow(@arguments) {
+    text-shadow: @arguments;
+    -moz-text-shadow: @arguments;
+    -webkit-text-shadow: @arguments;
+    -o-text-shadow: @arguments;
+}
+.center-block()
+{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.box-size(@w: auto, @h: auto)
+{
+    width: @w;
+    height:@h;
+}
+
+.square(@size)
+{
+    width: @size;
+    height: @size;
+}
+
+.bgp(@arguments) {
+    background-position: @arguments;
+}
+
+.transitionTransform(@arguments) {
+  transition:transform @arguments;
+  -webkit-transition: -webkit-transform @arguments;
+  -moz-transition: -moz-transform @arguments;
+  -o-transition: -o-transform @arguments;
+  -ms-transition: -ms-transform @arguments;
+}
+
+.gradient(@color: #F5F5F5, @start: #EEE, @stop: #FFF) {
+  background: @color !important;
+  background: -webkit-gradient(linear,
+                               left bottom,
+                               left top,
+                               color-stop(0, @start),
+                               color-stop(1, @stop)) !important;
+  background: -ms-linear-gradient(bottom,
+                                  @start,
+                                  @stop) !important;
+  background: -moz-linear-gradient(center bottom,
+                                   @start 0%,
+                                   @stop 100%) !important;
+  background: -o-linear-gradient(@stop,
+                                 @start) !important;
+  filter: e(%("progid:DXImageTransform.Microsoft.gradient(startColorstr='%d', endColorstr='%d', GradientType=0)",@stop,@start)) !important;
+}
+
+.at2x(@path, @w: auto, @h: auto) {
+  background-image: url(@path);
+  @at2x_path: ~`"@{path}".split('.').slice(0, "@{path}".split('.').length - 1).join(".") + "@2x" + "." + "@{path}".split('.')["@{path}".split('.').length - 1]`;
+
+  @media all and (-webkit-min-device-pixel-ratio : 1.5) {
+    background-image: url(@at2x_path);
+    background-size: @w @h;
+  }  
+}
+
+.placeholder-color(@color)
+{
+  ::-webkit-input-placeholder {
+     color: @color;
+  }
+
+  :-moz-placeholder { 
+     color: @color;  
+  }
+
+  ::-moz-placeholder { 
+     color: @color;  
+  }
+
+  :-ms-input-placeholder {  
+     color: @color;  
+  }
+}
+
+.columns(@num)
+{
+  @result: @num/100;
+  width: percentage(@result);
+  float:left;
+}
+
+.left { float: left; }
+.right { float: right; }
+.relative { position: relative; }
+.absolute { position: absolute; }
+.text-center { text-align: center; }
+.text-left { text-align: left;}
+.overflow { overflow:hidden; }
+.block { display: block; }
+.ib { display: inline-block; }
+
+.hide-text {
+  font: 0/0 a;
+  color: transparent;
+  text-shadow: none;
+  background-color: transparent;
+  border: 0;
+}
+
+.reset-input {
+  border:0 none;
+  padding:0;
+  margin:0;
+  background: transparent;
+}
+
+.clearfix {
+  *zoom: 1;
+  &:before,
+  &:after {
+    display: table;
+    content: "";
+    line-height: 0;
+  }
+  &:after {
+    clear: both;
+  }
+  clear:both;
+}
+
+a {
+    outline: none !important;
+}
+
+input::-moz-focus-inner { border: 0; }
+
+.disableSelection{
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}

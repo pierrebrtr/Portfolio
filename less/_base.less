@@ -1,0 +1,92 @@
+body {
+   font-family: @font1;
+   color: lighten(@black_color, 64%);
+   font-weight: 400;
+   line-height: 1.8;
+   font-size: 14px;
+   background: darken(@white_color, 2%);
+   letter-spacing: 0.4px;
+   overflow-x: hidden;
+}
+
+a {
+   color: lighten(@black_color, 3%);
+   font-weight: 400;
+   .transition(all .2s ease);
+
+   &:hover,
+   &:focus,
+   &:active {
+      color: lighten(@black_color, 75%);
+      text-decoration: none;
+      outline: 0;
+   }
+}
+
+h1, h2, h3, h4, h5, h6 {
+   color: lighten(@black_color, 3%);
+   line-height: 1.5;
+   font-weight: 700;
+   letter-spacing: -1px;
+}
+
+h1 { font-size: 52px; letter-spacing: -2px; }
+
+h2 { font-size: 52px; letter-spacing: -2px; }
+
+h3 { font-size: 22px; }
+
+h4 { font-size: 19px; }
+
+h5 { font-size: 16px; }
+
+iframe {
+   max-width: 100%;
+}
+
+embed,
+object,
+img,
+video {
+   height: auto;
+   max-width: 100%;
+}
+
+.dark {
+   color: lighten(@black_color, 3%);
+}
+
+.section {
+   margin-bottom: 100px;
+
+   &:last-of-type {
+      margin-bottom: 0;
+   }
+}
+
+.container {
+   max-width: 1460px;
+
+   &.smaller {
+      max-width: 1100px;
+   }
+}
+
+.main-content {
+  .opacity(0);
+}
+
+.fadein {
+  .opacity(0);
+  .transform(translateY(40px));
+}
+
+.fluidbox__overlay {
+   top: -110px;
+   bottom: 0;
+}
+
+.google-map {
+   height: 700px;
+   width: 100%;
+}

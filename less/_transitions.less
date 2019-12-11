@@ -1,0 +1,36 @@
+
+   // page transition, preloader
+   // ==================================================
+
+   .preloader {
+      position: fixed;
+      height: 150%;
+      width: 150%;
+      left: -25%;
+      top: -15%;
+      .transform(rotate(-6deg));
+      background: lighten(@black_color, 92%);
+      z-index: 1006;
+   }
+
+   .transition {
+      span {
+         position: fixed;
+         height: 100%;
+         top: 0;
+         left: 0;
+         width: 0;
+         background: darken(@white_color, 2%);
+         z-index: 1003;
+
+         &:nth-child(2) {
+            height: 0;
+            width: 150%;
+            left: -25%;
+            top: -15%;
+            .transform(rotate(-6deg));
+            background: lighten(@black_color, 92%);
+            z-index: 1002;
+         }
+      }
+   }

@@ -1,0 +1,102 @@
+   
+   // site footer
+   // ==================================================
+
+   footer {
+      margin: 150px 0 100px;
+      text-align: center;
+
+      img {
+         margin-bottom: 30px;
+      }
+
+      a {
+         padding: 0 7px;
+         font-size: 19px;
+         display: inline-block;
+      }
+
+      span {
+         height: 2px;
+         width: 28px;
+         background: lighten(@black_color, 3%);
+         display: block;
+         margin: 20px auto;
+      }
+
+      p {
+         margin: 0;
+      }
+   }
+
+   footer.single-nav {
+      margin: 0;
+      text-align: left;
+      
+
+      .container {
+         margin-top: 100px;
+         background: lighten(@black_color, 3%);
+         padding: 150px 15px;
+         display: block;
+         .transition(all .5s ease);
+      }
+
+      .row {
+         padding: 0 160px;
+      }
+
+      .next {
+         display: inline-block;
+         position: relative;
+         color: @white_color;
+         font-size: 18px;
+         font-weight: 300;
+         letter-spacing: 0.4px;
+         margin-bottom: 10px;
+
+         &:after {
+            content: '';
+            display: inline-block;
+            position: absolute;
+            top: 50%;
+            margin-top: -1px;
+            height: 2px;
+            width: 40px;
+            background: @white_color;
+            right: -56px;
+         }
+      }
+
+      h3 {
+         line-height: 1.2;
+         margin: 0;
+         color: @white_color;
+         font-size: 42px;
+         font-weight: 700;
+         letter-spacing: -1px;
+      }
+
+      i {
+         color: @white_color;
+         position: absolute;
+         top: 50%;
+         .transform(translateY(-50%));
+         font-size: 24px;
+         height: 60px;
+         width: 60px;
+         border-radius: 50%;
+         border: 2px solid transparent;
+         line-height: 58px;
+         text-align: center;
+         .transition(all .3s ease);
+      }
+
+      a:hover {
+         background: @black_color;
+
+         i {
+            border-color: @white_color;
+         }
+      }
+   }

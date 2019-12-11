@@ -1,0 +1,39 @@
+.blog {
+	&.two--columns {
+		margin: -50px -30px;
+
+		.item,
+      	.sizer {
+         	width: 50%;
+      	}
+
+		.item {
+			position: relative;
+			padding: 50px 30px;
+		}
+	}
+}
+
+.meta {
+	font-size: 13px;
+
+	span {
+		margin-right: 15px;
+	}
+}
+
+.tags {
+	a {
+		background: lighten(@black_color, 3%);
+		color: @white_color;
+		padding: 10px 20px;
+		margin-right: 10px;
+		font-size: 12px;
+		font-weight: 500;
+		border-radius: 4px;
+
+		&:hover {
+			background: lighten(@black_color, 23%);
+		}
+	}
+}
